@@ -11,7 +11,7 @@ RSpec.describe 'Words API', type: :request do
       before { post '/words/random', params: valid_attributes }
       
       it 'returns status code 200' do
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:ok)
       end
       
       it 'returns one of the two words submitted' do
