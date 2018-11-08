@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Word API is a Rails API server with 3 endpoints: '/words/random', '/words/rhyming', and '/words/reverse'. 
 
-Things you may want to cover:
+# Prerequisites
+* Ruby 2.5.1
+* Rails 5
 
-* Ruby version
+# Installation
+```
+  $ git clone https://github.com/Adjoa/rails-word-api.git
+  $ cd rails-word-api
+  $ bundle install
+  $ rails server
+```
 
-* System dependencies
+# Run the test suite
+`bundle exec rspec`
 
-* Configuration
+# About
+'/words/random'
+Returns a randomly selected word from an array of words
 
-* Database creation
+cURL Test
+`curl -i -X POST -H 'Content-Type: application/json' -d '{"words": ["one", "two"]}' http://localhost:8080/words/random`
 
-* Database initialization
+'/words/rhyming'
+Returns an array of words that rhyme with the submitted word
 
-* How to run the test suite
+cURL Test
+`curl -i -X POST -H 'Content-Type: application/json' -d '{"word": "rotation"}' http://localhost:8080/words/rhyming`
 
-* Services (job queues, cache servers, search engines, etc.)
+'/words/reverse'
+Returns the reversed equivalent of the submitted word
 
-* Deployment instructions
+cURL Test
+`curl -i -X POST -H 'Content-Type: application/json' -d '{"word": ""}' http://localhost:8080/words/reverse`
 
-* ...
+
+
