@@ -10,7 +10,7 @@ class WordsController < ApplicationController
   end
   
   def rhyming
-    if params[:word]
+    if !params[:word].empty?
       rhymes = Rhymes.new
       
       begin  
