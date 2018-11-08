@@ -25,7 +25,12 @@ class WordsController < ApplicationController
     end
   end
   
-  # def reverse
-    
-  # end
+  def reverse
+    if !params[:word].empty?
+      reversed_word = params[:word].reverse
+      json_response({ reversed_word: reversed_word }, :ok)
+    else
+      json_response({ message: 'Sorry, we couldn\'t process your submission' }, :unprocessable_entity)
+    end
+  end
 end
