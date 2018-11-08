@@ -5,7 +5,7 @@ class WordsController < ApplicationController
       word = params[:words].sample
       json_response({random_selection: word}, :ok)
     else
-      json_response({ message: 'Two words must be submitted to make a selection' }, :not_found)
+      json_response({ message: 'Two words must be submitted to make a selection' }, :unprocessable_entity)
     end
   end
   
