@@ -1,5 +1,7 @@
 class WordsController < ApplicationController
   
+  ##
+  # Returns a randomly selected word from an array of words
   def random
     if params[:words].length >= 2
       word = params[:words].sample
@@ -9,6 +11,8 @@ class WordsController < ApplicationController
     end
   end
   
+  ##
+  # Returns an array of words that rhyme with the submitted word
   def rhyming
     if !params[:word].empty?
       rhymes = Rhymes.new
@@ -25,6 +29,8 @@ class WordsController < ApplicationController
     end
   end
   
+  ##
+  # Returns the reversed equivalent of the submitted word
   def reverse
     if !params[:word].empty?
       reversed_word = params[:word].reverse
